@@ -29,30 +29,15 @@ function ocultarAdelante(){
     contenedor.classList.add('ocultar');
 }
 
-function encriptarTexto(mensaje){
-    let texto = mensaje;
-    let textoFinal = ''
+function desencriptarTexto(mensaje) {
+    let textoFinal = mensaje;
+    let regexEncriptadas = [/ai/g, /enter/g, /imes/g, /ober/g, /ufat/g];
+    let vocalesDesencriptadas = ["a", "e", "i", "o", "u"];
 
-    for (let i = 0; i < texto.length; i++){
-        if (texto[i] == 'a'){
-            textoFinal = textoFinal + 'ai'
-        }
-        else if (texto[i] == 'e'){
-            textoFinal = textoFinal + 'enter'
-        }
-        else if (texto[i] == 'i'){
-            textoFinal = textoFinal + 'imes'
-        }
-        else if (texto[i] == 'o'){
-            textoFinal = textoFinal + 'ober'
-        }
-        else if (texto[i] == 'u'){
-            textoFinal = textoFinal + 'ufat'
-        }
-        else{
-            textoFinal = textoFinal + texto[i]
-        }
-    }
+    regexEncriptadas.forEach((regex, index) => {
+        textoFinal = textoFinal.replace(regex, vocalesDesencriptadas[index]);
+    });
+
     return textoFinal;
 }
 
