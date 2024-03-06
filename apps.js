@@ -89,8 +89,9 @@ function desencriptarTexto(mensaje){
     return textoFinal;
     }
 
-    const btnCopiar = document.querySelector(".btn-copiar"); 
-    btnCopiar.addEventListener("click", copiar = () => {
-    let contenido = document.querySelector(".resultado").textContent;
-    navigator.clipboard.writeText(contenido);
-    });
+    const btnCopiar = document.querySelector(".btn-copiar");
+
+btnCopiar.addEventListener("click", copiar = () => {
+  let contenido = document.querySelector(".textoResultado").textContent;
+  navigator.clipboard.writeText(contenido);
+});
